@@ -121,7 +121,7 @@ public class Login extends AppCompatActivity {
                             Prevelent.currentOnlineUser = usersData;
 
 
-                            Intent intent = new Intent(Login.this, Doctor_homescreen.class);
+                            Intent intent = new Intent(Login.this, OpdPatientHomeActivity.class);
 
                             startActivity(intent);
 
