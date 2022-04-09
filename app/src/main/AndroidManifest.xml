@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.HospitalManagementSystem">
         <activity
+            android:name=".OpdPatientDoctorListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".OpdPatientHomeActivity"
+            android:exported="false" />
+        <activity
             android:name=".PatientHomeActivity"
             android:exported="true" />
         <activity
