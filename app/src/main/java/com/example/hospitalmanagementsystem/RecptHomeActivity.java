@@ -9,7 +9,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class RecptHomeActivity extends AppCompatActivity {
-    private TextView PatientList, DoctorList;
+    private TextView PatientList, DoctorList,AppoinmentList;
 
 
 
@@ -20,6 +20,7 @@ public class RecptHomeActivity extends AppCompatActivity {
 
         PatientList=findViewById(R.id.Text_Recp_pl);
         DoctorList=findViewById(R.id.Text_Recp_DL);
+        AppoinmentList=findViewById(R.id.Text_Recp_Appoinments);
 
 
         PatientList.setOnClickListener(new View.OnClickListener() {
@@ -39,6 +40,15 @@ public class RecptHomeActivity extends AppCompatActivity {
                 Intent intent=new Intent(getApplicationContext(),RecptDoctorList.class);
                 startActivity(intent);
 
+
+            }
+        });
+
+        AppoinmentList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),RecpAppoinmentActivity.class);
+                startActivity(intent);
 
             }
         });

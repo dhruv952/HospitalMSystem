@@ -53,4 +53,19 @@
         android:textColor="@color/white"
         android:textSize="18sp" />
 
+    <TextView
+        android:id="@+id/Text_Recp_Appoinments"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Text_Recp_DL"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_design"
+        android:padding="40dp"
+        android:text="Appoinments List"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
 </RelativeLayout>

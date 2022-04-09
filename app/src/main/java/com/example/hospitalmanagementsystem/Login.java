@@ -40,7 +40,7 @@ public class Login extends AppCompatActivity {
 
         btnLogin = findViewById(R.id.Btn_Submit);
         InputPassword = findViewById(R.id.Edt_Password);
-        txtRegister =(TextView) findViewById(R.id.txtRegister);
+        txtRegister = (TextView) findViewById(R.id.txtRegister);
         InputPhoneNumber = findViewById(R.id.Edt_Phone);
         loadingBar = new ProgressDialog(this);
         chkBoxRememberMe = findViewById(R.id.checkbox);
@@ -70,11 +70,8 @@ public class Login extends AppCompatActivity {
             Toast.makeText(this, "Please write your phone number...", Toast.LENGTH_SHORT).show();
         } else if (TextUtils.isEmpty(password)) {
             Toast.makeText(this, "Please write your password...", Toast.LENGTH_SHORT).show();
-        }
-        else if (phone.equals("00000") && password.equals("admin"))
-        {
-            if(chkBoxRememberMe.isChecked())
-            {
+        } else if (phone.equals("00000") && password.equals("admin")) {
+            if (chkBoxRememberMe.isChecked()) {
                 Paper.book().write(Prevelent.UserPhoneKey, phone);
                 Paper.book().write(Prevelent.UserPasswordKey, password);
 
@@ -83,23 +80,21 @@ public class Login extends AppCompatActivity {
             Intent intent = new Intent(Login.this, RecptHomeActivity.class);
 
             startActivity(intent);
-        }else {
+        } else {
             loadingBar.setTitle("Login Account");
             loadingBar.setMessage("Please wait, while we are checking the credentials.");
             loadingBar.setCanceledOnTouchOutside(false);
             loadingBar.show();
-            AllowAccessToAccount(phone,password);
+            AllowAccessToAccount(phone, password);
         }
     }
 
     private void AllowAccessToAccount(String phone, String password) {
         final DatabaseReference RootRef;
         RootRef = FirebaseDatabase.getInstance().getReference();
-        if(chkBoxRememberMe.isChecked())
-        {
+        if (chkBoxRememberMe.isChecked()) {
             Paper.book().write(Prevelent.UserPhoneKey, phone);
             Paper.book().write(Prevelent.UserPasswordKey, password);
-
 
 
         }
@@ -131,7 +126,7 @@ public class Login extends AppCompatActivity {
                         }
                     }
                 } else if (dataSnapshot.child("DoctorLog").child(phone).exists()) {
-                    users usersData = dataSnapshot.child(parentDbName).child(phone).getValue(users.class);
+                    users usersData = dataSnapshot.child("DoctorLog").child(phone).getValue(users.class);
 
                     if (usersData.getPhone().equals(phone)) {
                         if (usersData.getPassword().equals(password)) {
@@ -148,14 +143,14 @@ public class Login extends AppCompatActivity {
                             Toast.makeText(Login.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
                         }
 
-                    }
-                    else {
+                    } else {
                         Toast.makeText(Login.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
                         loadingBar.dismiss();
                     }
                 }
 
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 

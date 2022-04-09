@@ -32,8 +32,8 @@ import io.paperdb.Paper;
 
 public class OpdPatientDoctorListActivity extends AppCompatActivity {
     private ImageButton imageButton;
-    private RecyclerView RVOPD;
-    private RecyclerView.LayoutManager OPDLM;
+     RecyclerView RVOPD;
+     RecyclerView.LayoutManager OPDLM;
     private ProgressDialog LoadingBar;
 
     @Override
@@ -49,7 +49,7 @@ public class OpdPatientDoctorListActivity extends AppCompatActivity {
         imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), RecptHomeActivity.class);
+                Intent i = new Intent(getApplicationContext(), OpdPatientHomeActivity.class);
                 startActivity(i);
 
             }
@@ -88,7 +88,7 @@ public class OpdPatientDoctorListActivity extends AppCompatActivity {
 
                         doctorViewHolder.DocName.setText(doctorList.getDname());
                         doctorViewHolder.DocQua.setText(doctorList.getQualification());
-                        doctorViewHolder.DocDID.setText(doctorList.getDid());
+                        doctorViewHolder.DocDID.setText(doctorList.getSpecialization());
 
                         doctorViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override
@@ -113,13 +113,13 @@ public class OpdPatientDoctorListActivity extends AppCompatActivity {
                                                 @Override
                                                 public void onDataChange(@NonNull DataSnapshot dataSnapshot)
                                                 {
-                                                    if (!(dataSnapshot.child("PendingAppointment").child(Prevelent.currentOnlineUser.getPhone()).exists()))
+                                                    if (!(dataSnapshot.child("Appointment").child(Prevelent.currentOnlineUser.getPhone()).exists()))
                                                     {
                                                         HashMap<String, Object> userdataMap = new HashMap<>();
                                                         userdataMap.put("phone", Prevelent.currentOnlineUser.getPhone());
                                                         userdataMap.put("name", Prevelent.currentOnlineUser.getName());
                                                         userdataMap.put("status", "Pending");
-                                                        userdataMap.put("Doctor",doctorList.getUkey());
+                                                        userdataMap.put("doctor",doctorList.getDname()+"/n"+doctorList.getQualification());
 
 
 
@@ -134,7 +134,7 @@ public class OpdPatientDoctorListActivity extends AppCompatActivity {
                                                                             LoadingBar.dismiss();
 
 
-                                                                            Intent intent = new Intent(getApplicationContext(), OpdPatientDoctorListActivity.class);
+                                                                            Intent intent = new Intent(getApplicationContext(), OpdPatientHomeActivity.class);
                                                                             startActivity(intent);
                                                                         }
                                                                         else
@@ -151,7 +151,7 @@ public class OpdPatientDoctorListActivity extends AppCompatActivity {
                                                         LoadingBar.dismiss();
                                                         Toast.makeText(getApplicationContext(), "Please try again using another phone number.", Toast.LENGTH_SHORT).show();
 
-                                                        Intent intent = new Intent(getApplicationContext(), OpdPatientDoctorListActivity.class);
+                                                        Intent intent = new Intent(getApplicationContext(), OpdPatientHomeActivity.class);
                                                         startActivity(intent);
                                                     }
                                                 }

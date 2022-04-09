@@ -93,7 +93,7 @@ public class RecptDoctorList extends AppCompatActivity {
 
                         doctorViewHolder.DocName.setText(doctorList.getDname());
                         doctorViewHolder.DocQua.setText(doctorList.getQualification());
-                        doctorViewHolder.DocDID.setText(doctorList.getDid());
+                        doctorViewHolder.DocDID.setText(doctorList.getSpecialization());
 
                         doctorViewHolder.itemView.setOnClickListener(new View.OnClickListener() {
                             @Override

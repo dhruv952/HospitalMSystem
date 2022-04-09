@@ -2,7 +2,7 @@ package com.example.hospitalmanagementsystem;
 
 public class DoctorList {
     String dname;
-    String did;
+    String phone;
     String qualification;
     String specialization;
     String image;
@@ -18,12 +18,12 @@ public class DoctorList {
         this.dname = dname;
     }
 
-    public String getDid() {
-        return did;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setDid(String did) {
-        this.did = did;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public String getQualification() {
@@ -74,9 +74,9 @@ public class DoctorList {
         this.ukey = ukey;
     }
 
-    public DoctorList(String dname, String did, String qualification, String specialization, String image, String date, String time, String ukey) {
+    public DoctorList(String dname, String phone, String qualification, String specialization, String image, String date, String time, String ukey) {
         this.dname = dname;
-        this.did = did;
+        this.phone = phone;
         this.qualification = qualification;
         this.specialization = specialization;
         this.image = image;

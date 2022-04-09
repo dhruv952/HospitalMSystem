@@ -87,7 +87,7 @@ public class Welcome extends AppCompatActivity {
                             Toast.makeText(Welcome.this, "Please wait, you are logged in...", Toast.LENGTH_SHORT).show();
                             loadingBar.dismiss();
 
-                            Intent intent = new Intent(Welcome.this, Doctor_homescreen.class);
+                            Intent intent = new Intent(Welcome.this, OpdPatientHomeActivity.class);
                             Prevelent.currentOnlineUser = usersData;
                             startActivity(intent);
                         }

@@ -32,9 +32,9 @@ import java.util.HashMap;
 public class RecptAddDocActivity extends AppCompatActivity {
 
 
-    private String  qualification, DID, Dname,Specs, saveCurrentDate, saveCurrentTime;
+    private String  qualification, phone, Dname,Specs, saveCurrentDate, saveCurrentTime,pass;
     private ImageView InputDocImage;
-    private EditText InputDocName, InputDocQualification, InputDS,InputDoctorDID;
+    private EditText InputDocName, InputDocQualification, InputDS,InputDoctorphone,InputDocPass;
     private static final int GalleryPick = 1;
     private Uri ImageUri;
     private String doctorRandomKey, downloadImageUrl;
@@ -49,13 +49,14 @@ public class RecptAddDocActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recpt_add_doc);
         DocImagesRef = FirebaseStorage.getInstance().getReference().child("Doctor Images");
-        DocRef = FirebaseDatabase.getInstance().getReference().child("Doctors");
+        DocRef = FirebaseDatabase.getInstance().getReference();
         loadingBar=new ProgressDialog(this);
         InputDocImage=findViewById(R.id.add_Doc_Image);
         InputDocName=findViewById(R.id.add_Doc_name);
         InputDocQualification=findViewById(R.id.add_Doc_qualification);
         InputDS=findViewById(R.id.add_Doc_Specs);
-        InputDoctorDID=findViewById(R.id.add_Doc_DID);
+        InputDoctorphone=findViewById(R.id.add_Doc_phone);
+        InputDocPass=findViewById(R.id.add_Doc_pass);
         AddDocbtn=findViewById(R.id.btn_AddDoctor);
 
         InputDocImage.setOnClickListener(new View.OnClickListener() {
@@ -77,22 +78,23 @@ public class RecptAddDocActivity extends AppCompatActivity {
 
     private void ValidatePatientData() {
         qualification = InputDocQualification.getText().toString();
-        DID = InputDoctorDID.getText().toString();
+        phone = InputDoctorphone.getText().toString();
         Dname = InputDocName.getText().toString();
         Specs=InputDS.getText().toString();
+        pass=InputDocPass.getText().toString();
 
 
         if (ImageUri == null)
         {
-            Toast.makeText(this, "Patient image is mandatory...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Doctor image is mandatory...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(qualification))
         {
             Toast.makeText(this, "Please write Doctor Qualification...", Toast.LENGTH_SHORT).show();
         }
-        else if (TextUtils.isEmpty(DID))
+        else if (TextUtils.isEmpty(phone))
         {
-            Toast.makeText(this, "Please write Doctor DID...", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please write Doctor Phone...", Toast.LENGTH_SHORT).show();
         }
         else if (TextUtils.isEmpty(Dname))
         {
@@ -101,6 +103,10 @@ public class RecptAddDocActivity extends AppCompatActivity {
         else if (TextUtils.isEmpty(Specs))
         {
             Toast.makeText(this, "Please write Doctor Medical Specilization", Toast.LENGTH_SHORT).show();
+        }
+        else if (TextUtils.isEmpty(pass))
+        {
+            Toast.makeText(this, "Please write Doctor password", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -183,21 +189,32 @@ public class RecptAddDocActivity extends AppCompatActivity {
         productMap.put("qualification",qualification );
         productMap.put("image", downloadImageUrl);
         productMap.put("specialization", Specs);
-        productMap.put("did",DID );
+        productMap.put("phone",phone );
         productMap.put("dname", Dname);
 
-        DocRef.child(doctorRandomKey).updateChildren(productMap)
+        DocRef.child("Doctors").child(doctorRandomKey).updateChildren(productMap)
                 .addOnCompleteListener(new OnCompleteListener<Void>() {
                     @Override
                     public void onComplete(@NonNull Task<Void> task)
                     {
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(getApplicationContext(), RecptDoctorList.class);
-                            startActivity(intent);
+                            HashMap<String, Object> LogMap = new HashMap<>();
+                            LogMap.put("name", Dname);
+                            LogMap.put("phone", phone);
+                            LogMap.put("password", pass);
+                            DocRef.child("DoctorLog").child(phone).updateChildren(LogMap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                @Override
+                                public void onComplete(@NonNull Task<Void> task) {
+                                    Intent intent = new Intent(getApplicationContext(), RecptDoctorList.class);
+                                    startActivity(intent);
+                                    loadingBar.dismiss();
+                                    Toast.makeText(getApplicationContext(), "Doctor added successfully..", Toast.LENGTH_SHORT).show();
 
-                            loadingBar.dismiss();
-                            Toast.makeText(getApplicationContext(), "Doctor added successfully..", Toast.LENGTH_SHORT).show();
+
+                                }
+                            });
+
                         }
                         else
                         {
@@ -207,6 +224,7 @@ public class RecptAddDocActivity extends AppCompatActivity {
                         }
                     }
                 });
+
     }
 
     private void OpenGallery() {
