@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".RecptHomeActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:id="@+id/RHLL"
+        android:background="@color/customBlue"
+        android:elevation="7dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:gravity="center"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/Text_Recp_pl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/RHLL"
+        android:text="Patients List"
+        android:textSize="18sp"
+        android:textColor="@color/white"
+        android:background="@drawable/btn_design"
+        android:layout_margin="20dp"
+        android:textAlignment="center"
+        android:padding="40dp"/>
+
+    <TextView
+        android:id="@+id/Text_Recp_DL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Text_Recp_pl"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/btn_design"
+        android:padding="40dp"
+        android:text="Doctors List"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="18sp" />
+
+</RelativeLayout>

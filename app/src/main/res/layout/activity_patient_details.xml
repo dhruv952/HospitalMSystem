@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PatientDetails">
+
+    <RelativeLayout
+        android:id="@+id/PatientDetHeader"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/customBlue"
+
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/Img_recpPBack"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@drawable/img_circle"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Patient's List"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+
+            />
+    </RelativeLayout>
+
+
+
+    <ImageView
+        android:id="@+id/PatientDetImg"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_below="@+id/PatientDetHeader"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/logo" />
+
+
+    <TextView
+        android:id="@+id/PatientDetName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PatientDetHeader"
+        android:layout_marginHorizontal="10dp"
+        android:elevation="4dp"
+        android:layout_marginTop="20dp"
+        android:layout_toRightOf="@+id/PatientDetImg"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="Patient Name"
+        android:textColor="@color/black"
+        android:background="@drawable/wel_design"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/PatientDetDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wel_design"
+        android:layout_below="@+id/PatientDetName"
+        android:layout_marginHorizontal="10dp"
+        android:textColor="@color/black"
+        android:layout_marginVertical="5dp"
+
+        android:layout_toRightOf="@+id/PatientDetImg"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Patient's Description"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/PatientUID"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:textColor="@color/black"
+        android:layout_below="@+id/PatientDetDesc"
+        android:layout_toRightOf="@+id/PatientDetImg"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:gravity="center"
+        android:padding="18dp"
+        android:text="Patient's UID"
+        android:textSize="18sp" />
+
+
+    <TextView
+        android:id="@+id/PatientMedHist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/PatientDetImg"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="18dp"
+        android:text="Medical History"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+    <LinearLayout
+        android:id="@+id/ll_rv"
+        android:layout_below="@+id/PatientMedHist"
+        android:layout_above="@id/RL_btn"
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_PatientDetTreatment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:scrollbars="vertical"
+        android:padding="18dp"
+        />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_PatientBill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:layout_weight="1"
+        android:scrollbars="vertical"
+        android:padding="20dp"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/RL_btn"
+        android:layout_alignParentBottom="true"
+
+        >
+    <Button
+        android:id="@+id/btn_add_treatment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/customBlue"
+        android:elevation="4dp"
+        android:padding="15dp"
+        android:text="Add Treatment"
+        android:visibility="gone"
+        android:textSize="18sp" />
+    <Button
+        android:id="@+id/btn_add_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/customBlue"
+        android:elevation="4dp"
+        android:padding="15dp"
+        android:text="Add Bills"
+        android:visibility="gone"
+        android:textSize="18sp" />
+    </RelativeLayout>
+
+</RelativeLayout>

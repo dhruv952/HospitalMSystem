@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        tools:context=".RecptAddDocActivity">
+
+
+        <ImageView
+            android:id="@+id/add_Doc_Image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginHorizontal="35dp"
+            android:contentDescription="Upload Doctor Image"
+            android:layout_marginVertical="5dp"
+            app:srcCompat="@drawable/ic_baseline_photo_camera_24" />
+
+        <EditText
+            android:id="@+id/add_Doc_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_Doc_Image"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/wel_design"
+            android:hint="Doctor Name"
+            android:inputType="text"
+            android:padding="20dp"
+            android:textColor="@color/customBlue"
+            android:textColorHint="@color/black"
+            android:textSize="19sp" />
+
+        <EditText
+            android:id="@+id/add_Doc_Specs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_Doc_name"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/wel_design"
+            android:hint="Doctor's Specialization"
+            android:inputType="textMultiLine"
+            android:padding="20dp"
+            android:textColor="@color/customBlue"
+            android:textColorHint="@color/black"
+            android:textSize="19sp" />
+
+    <EditText
+        android:id="@+id/add_Doc_qualification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_Doc_Specs"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:hint="Doctor Qualification"
+        android:inputType="textMultiLine"
+        android:padding="20dp"
+        android:textColor="@color/customBlue"
+        android:textColorHint="@color/black"
+        android:textSize="19sp" />
+
+        <EditText
+            android:id="@+id/add_Doc_DID"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_Doc_qualification"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/wel_design"
+            android:hint="Doctor's UID"
+            android:inputType="number"
+            android:padding="20dp"
+            android:textColor="@color/customBlue"
+            android:textColorHint="@color/black"
+            android:textSize="19sp" />
+
+        <Button
+            android:id="@+id/btn_AddDoctor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/add_Doc_DID"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:background="@drawable/btn_design"
+            android:text="Add Doctor"
+            android:textColor="@color/white"
+            android:padding="20dp"
+            android:textSize="19sp" />
+    </RelativeLayout>
+

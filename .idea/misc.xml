@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/drawable/btn_design.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/drawable/ic_baseline_photo_camera_24.xml" value="0.21574074074074073" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.20555555555555555" />
+        <entry key="app/src/main/res/drawable/img_circle.xml" value="0.1527777777777778" />
+        <entry key="app/src/main/res/drawable/wel_design.xml" value="0.18888888888888888" />
+        <entry key="app/src/main/res/layout/activity_add_patient.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_add_treatment.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_bill.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_bill_data_insertion.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_doctor_homescreen.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_patient_details.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_recpt_add_doc.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_recpt_doctor_list.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_recpt_home.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_recpt_patient_edt.xml" value="0.19270833333333334" />
+        <entry key="app/src/main/res/layout/activity_recpt_patient_list.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_welcome.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/bill_layout.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/doc_list_layout.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/patient_list_layout.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/treatment_layout.xml" value="0.35572916666666665" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

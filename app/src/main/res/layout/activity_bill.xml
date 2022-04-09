@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    tools:context=".Bill_Activity">
+        <RelativeLayout
+            android:id="@+id/cart_list_header"
+            android:layout_height="50dp"
+            android:layout_width="match_parent"
+            android:background="@color/customBlue"
+
+            >
+            <TextView
+                android:id="@+id/total_cost"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Total Price = "
+                android:textSize="20sp"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/white"
+                />
+        </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_bill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_bill_add"
+        android:layout_below="@+id/cart_list_header" />
+
+    <Button
+        android:id="@+id/btn_bill_generate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Generate Bill"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/customBlue"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/btn_bill_add"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_bill_generate"
+        android:text="Add More"
+        android:textSize="20sp"
+        android:textColor="@color/white"
+        android:background="@color/customBlue"
+        android:layout_margin="10dp"/>
+
+    </RelativeLayout>
+
+
+

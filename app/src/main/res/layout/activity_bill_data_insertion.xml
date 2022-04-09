@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    tools:context=".Bill_data_Insertion">
+
+  <TextView
+      android:id="@+id/txt_uid"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Uid"
+      android:textAlignment="center"
+      android:textColor="@color/customBlue"
+      android:textSize="18sp" />
+
+  <EditText
+      android:id="@+id/Edt_bill_desc"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginHorizontal="10dp"
+      android:layout_marginTop="40dp"
+      android:background="@drawable/wel_design"
+      android:hint="Expenditure"
+      android:padding="15dp"
+      android:textAlignment="center"
+      android:textColor="@color/black"
+      android:textSize="18sp" />
+    <EditText
+        android:id="@+id/Edt_bill_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:layout_below="@+id/Edt_bill_desc"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/wel_design"
+        android:hint="Amount"
+        android:padding="15dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+  <Button
+      android:id="@+id/btn_bill_Insert"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@+id/Edt_bill_price"
+      android:layout_marginHorizontal="10dp"
+      android:layout_marginTop="40dp"
+      android:background="@drawable/btn_design"
+      android:padding="15dp"
+      android:text="Insert"
+      android:textAlignment="center"
+      android:textColor="@color/white"
+      android:textSize="18sp" />
+
+</RelativeLayout>

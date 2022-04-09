@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:elevation="6dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/customBlue">
+        <TextView
+            android:id="@+id/txt_doc_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Doctor Name"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"
+            android:padding="20dp"
+
+            />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:elevation="6dp"
+        android:layout_below="@+id/txt_doc_name"
+        android:background="@color/customBlue"
+        android:orientation="horizontal"
+        >
+
+        <TextView
+            android:id="@+id/txt_doc_qua"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Qualification"
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:padding="20dp"
+
+            />
+        <TextView
+            android:id="@+id/txt_doctor_did"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_weight="1"
+            android:text="DID"
+            android:textAlignment="viewEnd"
+            android:textSize="18sp"
+            android:padding="20dp"
+            />
+
+
+
+    </LinearLayout>
+
+</RelativeLayout>
+
+</androidx.cardview.widget.CardView>
