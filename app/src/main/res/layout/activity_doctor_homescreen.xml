@@ -7,41 +7,52 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".Doctor_homescreen">
-        <RelativeLayout
+        <LinearLayout
             android:id="@+id/patient_list_header"
             android:layout_height="50dp"
             android:layout_width="match_parent"
             android:background="@color/customBlue"
-            >
+            android:orientation="horizontal">
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:text="Doctor"
+                android:layout_weight="1"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:gravity="center"
 
                 />
-        </RelativeLayout>
+            <ImageButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="4"
+                android:id="@+id/imgbtn_signout"
+
+                android:src="@drawable/ic_baseline_power_settings_new_24"
+                android:background="@color/customBlue"/>
+
+
+        </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_patient"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@id/btn_next_process"
+        android:layout_height="match_parent"
+
         android:layout_below="@+id/patient_list_header"
         android:scrollbars="vertical" />
 
-        <Button
-            android:id="@+id/btn_next_process"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:text="Next"
-            android:textSize="20sp"
-            android:textColor="@color/white"
-            android:background="@color/customBlue"
-            android:layout_margin="10dp"/>
+
+
+
+
+
+
+
+
+
+
 
 
     </RelativeLayout>

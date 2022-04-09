@@ -97,7 +97,30 @@ public class Welcome extends AppCompatActivity {
                             Toast.makeText(Welcome.this, "Password is incorrect.", Toast.LENGTH_SHORT).show();
                         }
                     }
+                }else if (dataSnapshot.child("DoctorLog").child(phone).exists()) {
+                    users usersData = dataSnapshot.child("DoctorLog").child(phone).getValue(users.class);
+
+                    if (usersData.getPhone().equals(phone)) {
+                        if (usersData.getPassword().equals(password)) {
+                            Toast.makeText(getApplicationContext(), "logged in Successfully...", Toast.LENGTH_SHORT).show();
+                            loadingBar.dismiss();
+                            Prevelent.currentOnlineUser = usersData;
+
+
+                            Intent intent = new Intent(getApplicationContext(), Doctor_homescreen.class);
+                            startActivity(intent);
+
+                        } else {
+                            loadingBar.dismiss();
+                            Toast.makeText(getApplicationContext(), "Password is incorrect.", Toast.LENGTH_SHORT).show();
+                        }
+
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
+                        loadingBar.dismiss();
+                    }
                 }
+
                 else
                 {
                     Toast.makeText(Welcome.this, "Account with this " + phone + " number do not exists.", Toast.LENGTH_SHORT).show();
