@@ -19,9 +19,20 @@
             android:layout_height="match_parent"
             android:text="@string/app_name"
             android:textColor="@color/white"
+            android:layout_weight="1"
             android:textSize="18sp"
             android:gravity="center"
             android:textAlignment="center"/>
+
+
+        <ImageButton
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="4"
+            android:id="@+id/Pt_imgbtn_signout"
+
+            android:src="@drawable/ic_baseline_power_settings_new_24"
+            android:background="@color/customBlue"/>
 
     </LinearLayout>
     <TextView

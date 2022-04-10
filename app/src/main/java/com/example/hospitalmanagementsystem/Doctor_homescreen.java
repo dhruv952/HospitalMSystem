@@ -12,15 +12,19 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import io.paperdb.Paper;
+
 public class Doctor_homescreen extends AppCompatActivity {
     RecyclerView recyclerView;
     RecyclerView.LayoutManager layoutManager;
+    ImageButton signout;
 
 
 
@@ -28,12 +32,33 @@ public class Doctor_homescreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doctor_homescreen);
+        Paper.init(this);
 
         recyclerView = findViewById(R.id.rv_patient);
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
+        signout=findViewById(R.id.imgbtn_signout);
+        signout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                {
+                    Paper.book().destroy();
+
+                    Intent intent = new Intent(Doctor_homescreen.this, Welcome.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    finish();
+
+
+
+
+
+                }
+
+            }
+        });
 
     }
     @Override
