@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,7 +34,8 @@ public class PatientDetails extends AppCompatActivity {
     RecyclerView.LayoutManager lm_treatment, lm_bills;
     int bill_clickable = 0, treat_clickable = 0;
     private TextView txtuid, txtname, txtdesc, txtMedicalHist, txtBill, txtTreatment;
-    private Button addTreatment, addBills;
+    private LinearLayout linearLayout;
+    private Button addTreatment, addBills,genbills;
     private ImageView imageView;
     private ImageButton imgback;
     private RecyclerView rv_treatment, rv_bills;
@@ -53,6 +55,8 @@ public class PatientDetails extends AppCompatActivity {
         txtMedicalHist = findViewById(R.id.PatientMedHist);
         addTreatment = findViewById(R.id.btn_add_treatment);
         addBills = findViewById(R.id.btn_add_bill);
+        linearLayout=findViewById(R.id.LLPD2);
+        genbills = findViewById(R.id.btn_gen_bill);
         txtname = findViewById(R.id.PatientDetName);
         imageView = findViewById(R.id.PatientDetImg);
         rv_treatment = findViewById(R.id.rv_PatientDetTreatment);
@@ -66,13 +70,17 @@ public class PatientDetails extends AppCompatActivity {
 
         if (mode.equals("Doctor")) {
             addTreatment.setVisibility(View.VISIBLE);
+            linearLayout.setVisibility(View.GONE);
             addBills.setVisibility(View.GONE);
+            genbills.setVisibility(View.GONE);
             treat_clickable = 1;
             bill_clickable = 0;
 
         } else if (mode.equals("recp")) {
             addBills.setVisibility(View.VISIBLE);
             addTreatment.setVisibility(View.GONE);
+            genbills.setVisibility(View.VISIBLE);
+            linearLayout.setVisibility(View.VISIBLE);
             treat_clickable = 0;
             bill_clickable = 1;
 
@@ -83,6 +91,17 @@ public class PatientDetails extends AppCompatActivity {
             bill_clickable = 0;
 
         }
+
+        genbills.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(), GenerateBillActivity.class);
+                i.putExtra("pid",pid);
+                startActivity(i);
+
+
+            }
+        });
         imgback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

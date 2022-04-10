@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GenerateBillActivity">
+
+    <RelativeLayout
+        android:id="@+id/PatientGenBillHeader"
+        android:layout_height="50dp"
+        android:layout_width="match_parent"
+        android:background="@color/customBlue"
+
+        >
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/Img_recpGBBack"
+            android:layout_marginHorizontal="10dp"
+            android:src="@drawable/ic_baseline_arrow_back_24"
+            android:background="@drawable/img_circle"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="Generate Bill"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+
+            />
+    </RelativeLayout>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_PatientGenBill"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/txtBill_FinalAmt"
+        android:layout_below="@+id/PatientGenBillHeader"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:padding="20dp"
+        android:scrollbars="vertical" />
+
+
+    <TextView
+        android:id="@+id/txtBill_FinalAmt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_gen_bill"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/wel_design"
+        android:elevation="4dp"
+        android:gravity="center"
+        android:padding="18dp"
+        android:text="Final Amount"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_gen_bill"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:background="@color/customBlue"
+        android:elevation="4dp"
+        android:padding="15dp"
+        android:text="Generate Bills"
+        android:layout_marginBottom="10dp"
+        android:textSize="18sp" />
+</RelativeLayout>

@@ -14,11 +14,12 @@
         <entry key="app/src/main/res/layout/activity_bill.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_bill_data_insertion.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_doctor_homescreen.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_generate_bill.xml" value="0.34010416666666665" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.19322916666666667" />
         <entry key="app/src/main/res/layout/activity_opd_patient_doctor_list.xml" value="0.14814814814814814" />
         <entry key="app/src/main/res/layout/activity_opd_patient_home.xml" value="0.17299898682877407" />
-        <entry key="app/src/main/res/layout/activity_patient_details.xml" value="0.19322916666666667" />
+        <entry key="app/src/main/res/layout/activity_patient_details.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_patient_home.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_recp_appoinment.xml" value="0.16590678824721378" />
         <entry key="app/src/main/res/layout/activity_recpt_add_doc.xml" value="0.18" />
